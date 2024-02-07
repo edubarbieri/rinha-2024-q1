@@ -3,8 +3,8 @@ package model
 import "time"
 
 type StatementOutput struct {
-	Balance      Balance       `json:"saldo"`
-	Transactions []Transaction `json:"ultimas_transacoes"`
+	Balance      *Balance       `json:"saldo"`
+	Transactions []*Transaction `json:"ultimas_transacoes"`
 }
 
 type Balance struct {
