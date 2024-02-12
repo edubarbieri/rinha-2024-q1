@@ -1,14 +1,10 @@
 # Create transaction
-POST http://localhost:3000/clientes/1/transacoes HTTP/1.1
+POST http://localhost:9999/clientes/1/transacoes HTTP/1.1
 content-type: application/json
 
-{
-    "valor": 1000,
-    "tipo" : "c",
-    "descricao" : "descricao"
-}
+{"valor": 1, "tipo": "d", "descricao": "devolve"}
 
 ### 
 
-GET http://localhost:3000/clientes/1/extrato HTTP/1.1
+GET http://localhost:9999/clientes/1/extrato HTTP/1.1
 content-type: application/json

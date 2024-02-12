@@ -1,6 +1,6 @@
 module github.com/edubarbieri/rinha-2024-q1
 
-go 1.21.6
+go 1.22
 
 require (
 	github.com/andybalholm/brotli v1.0.5 // indirect
