@@ -9,4 +9,4 @@ run:
 	PORT=3000 go run cmd/main.go
 
 docker-build:
-	docker build . -t duduardo23/rinha:latest
+	docker buildx build --platform linux/amd64 -t duduardo23/rinha:latest .
