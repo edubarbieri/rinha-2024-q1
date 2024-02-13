@@ -55,8 +55,6 @@ services:
       - MYSQL_PASSWORD=rinha
       - MYSQL_ALLOW_EMPTY_PASSWORD=true
       - MYSQL_ROOT_HOST="%"
-    ports:
-      - '3306:3306'
     volumes:
       - ./db/my.cnf:/etc/my.cnf:ro
       - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
@@ -68,7 +66,7 @@ services:
           # de memória. A distribuição feita aqui é apenas
           # um exemplo – distribua como quiser.
           cpus: "0.5"
-          memory: "350MB"
+          memory: "400MB"
 
 # O uso do modo `bridge` deve ser adequado à carga que será usada no teste.
 # A edição anterior se beneficiou do modo host pois o volume de requisições

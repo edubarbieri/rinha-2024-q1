@@ -26,6 +26,7 @@ CREATE PROCEDURE create_transaction(
   IN tx_desc varchar(10)
   )
 BEGIN
+
     IF tx_type = 'c' THEN
       UPDATE clients set balance = balance + tx_value where id = client_id;
     ELSE
@@ -34,11 +35,13 @@ BEGIN
 
     INSERT INTO transactions (client_id, value, type, description) VALUES 
       (client_id, tx_value, tx_type, tx_desc);
+    
 END $$
 
 
 DELIMITER ;
 
+START TRANSACTION;
 insert into clients (id, c_limit, balance) 
 values
   (1,100000, 0),
@@ -46,4 +49,4 @@ values
   (3,1000000, 0),
   (4,10000000, 0),
   (5,500000, 0);
-
+COMMIT;
